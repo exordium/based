@@ -7,10 +7,6 @@ import qualified Z
 import {-# SOURCE #-} I
 
 type U# = P.U
--- | A fixed-precision integer type with at least the range @[-2^29 .. 2^29-1]@.
--- The exact range for a given implementation can be determined by using
--- 'Prelude.minBound' and 'Prelude.maxBound' from the 'Prelude.Bounded'
--- class.
 data {-# CTYPE "HsWord" #-} U = U U#
 
 pattern Max, Min ∷ U

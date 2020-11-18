@@ -17,14 +17,17 @@ source-repository head
 
 common x
   default-language: Haskell2010
-  default-extensions: AllowAmbiguousTypes, BangPatterns, BinaryLiterals, ConstraintKinds, DataKinds, DefaultSignatures, DeriveAnyClass, DeriveDataTypeable, DeriveGeneric, DeriveLift, DerivingStrategies, EmptyCase, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, GeneralizedNewtypeDeriving, InstanceSigs, LambdaCase, MultiWayIf, NamedFieldPuns, NamedWildCards, NegativeLiterals, NumDecimals, OverloadedLabels, OverloadedStrings, PartialTypeSignatures, PatternSynonyms, PolyKinds, RankNTypes, RecordWildCards, RecursiveDo, RoleAnnotations, ScopedTypeVariables, StandaloneDeriving, StrictData, TupleSections, TypeApplications, TypeFamilyDependencies, TypeOperators, ViewPatterns, ImpredicativeTypes, QuantifiedConstraints, NumericUnderscores, BlockArguments, DerivingVia
+  default-extensions: AllowAmbiguousTypes, BangPatterns, BinaryLiterals, ConstraintKinds, DataKinds, DefaultSignatures, DeriveAnyClass, DeriveDataTypeable, DeriveGeneric, DeriveLift, DerivingStrategies, EmptyCase, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, GeneralizedNewtypeDeriving, InstanceSigs, LambdaCase, MultiWayIf, NamedFieldPuns, NamedWildCards, NegativeLiterals, NumDecimals, OverloadedLabels, PartialTypeSignatures, PatternSynonyms, PolyKinds, RankNTypes, RecordWildCards, RecursiveDo, RoleAnnotations, ScopedTypeVariables, StandaloneDeriving, StrictData, TupleSections, TypeApplications, TypeFamilyDependencies, TypeOperators, ViewPatterns, ImpredicativeTypes, QuantifiedConstraints, NumericUnderscores, BlockArguments, DerivingVia
                     , UnicodeSyntax, PackageImports
 library 
   import: x
   hs-source-dirs: src
   exposed-modules: Prelude, Ord, Eq, Maybe, Debug
-                 , Syntax.Do
-                 , Syntax.FromString
                  , I , U , F32, F64
+                 , I.I8
                  , K, Char
+                 , Exception, Exception.Stack
+                 , IO, ST
+                 , Syntax
+  reexported-modules: Coerce
   build-depends: microbase, prim, integer

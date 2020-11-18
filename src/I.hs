@@ -18,7 +18,7 @@ pattern Max, Min ∷ I
 pattern Max = I P.Max
 pattern Min = I P.Min
 
-infixl 7 *, /, //, %, %%
+infixl 7 *, ⁄, ⁄⁄, %, %%
 infixl 6 +, -
 (+), (-), (*) ∷ I → I → I
 I x + I y = I (x P.+ y)
@@ -54,9 +54,9 @@ negate ∷ I → I
 negate (I x) = I (P.negate x)
 -- | Rounds towards 0. The behavior is undefined if the first argument is zero.
 quot, rem ∷ I {- ^ divisor -}  → I {- ^ dividend -} → I
-(%%), (//) ∷ I {- ^ dividend -}  → I {- ^ divisor -} → I
+(%%), (⁄⁄) ∷ I {- ^ dividend -}  → I {- ^ divisor -} → I
 quot (I y) (I x) = I (P.quot y x)
-I x // I y = I (x P.// y)
+I x ⁄⁄ I y = I (x P.⁄⁄ y)
 -- |Satisfies @(add (rem y x) (mul y (quot y x)) == x@. The
 --     behavior is undefined if the first argument is zero.
 rem (I y) (I x) = I (P.rem y x)
@@ -68,10 +68,10 @@ quotRem (I y) (I x) = case P.quotRem y x of (# q , r #) → (I q , I r)
 -- These functions have built-in rules.
 -- | Rounds towards -∞. The behavior is undefined if the first argument is zero.
 div,mod ∷ I {- ^ divisor -} → I {- ^ dividend -} → I
-(%), (/) ∷ I {- ^ dividend -}  → I {- ^ divisor -} → I
+(%), (⁄) ∷ I {- ^ dividend -}  → I {- ^ divisor -} → I
 div (I y) (I x) = I (P.div y x)
 mod (I y) (I x) = I (P.mod y x)
-I x / I y = I (x P./ y)
+I x ⁄ I y = I (x P.⁄ y)
 I x % I y = I (x P.% y)
 -- | Rounds towards -∞. The behavior is undefined if the first argument is zero.
 divMod (I y) (I x) = case P.divMod y x of (# a , b #) → (I a , I b)
