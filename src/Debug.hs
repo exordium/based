@@ -1,15 +1,7 @@
 {-# language MagicHash #-}
-module Debug (Debug, showsPrec, show, debug)where
+module Debug (Show(..),Read(..)) where
 import GHC.Show
-import Stock.Char
-import qualified String
-import Stock.IO
-
-type Debug = Show
-type String = String.List
-
-debug ∷ Debug a ⇒ a → String
-debug = show
+import GHC.Read
 
 {-
 traceIO ∷ String → a → a

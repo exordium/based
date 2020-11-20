@@ -28,6 +28,6 @@ library
                  , K, Char
                  , Exception, Exception.Stack
                  , IO, ST
-                 , Syntax
-  reexported-modules: Coerce
+                 , Syntax, Syntax.Do, Syntax.String, Syntax.List, Syntax.Num
+  reexported-modules: Coerce, Syntax.ImplicitParam
   build-depends: microbase, prim, integer
