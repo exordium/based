@@ -5,7 +5,6 @@ import "prim" Coerce
 import qualified "prim" Ref.Boxed as Prim
 import "this" IO
 import "prim" IO (type (☸))
-import "prim" ST (type Token)
 import B
 import Stock.Eq
 import "this" ST (ST(..))

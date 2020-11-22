@@ -31,7 +31,7 @@ library
                  , IO, ST
                  , Syntax, Syntax.Do, Syntax.String, Syntax.List, Syntax.Num
                  , Ref
-                 , Ref.IO
+                 , Ref.IO, Ref.IO.Lazy, Ref.IO.Atomic, Ref.IO.Atomic.Lazy
                  , Ref.ST, Ref.ST.Lazy, Ref.ST.Atomic, Ref.ST.Atomic.Lazy
   reexported-modules: Coerce, Syntax.ImplicitParam
   build-depends: microbase, prim, integer, base
