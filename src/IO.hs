@@ -1,5 +1,10 @@
 {-# language MagicHash, UnboxedTuples #-}
-module IO (IO, module IO) where
+module IO (IO(IO#)
+          ,type (☸)
+          ,φ, η,μ,(>>),(>>=)
+          ,fromST,toST
+          ,interleave# ,dupableInterleave#,noDuplicate#
+          ) where
 import Stock.IO
 import "prim" IO
 import "prim" Thread
