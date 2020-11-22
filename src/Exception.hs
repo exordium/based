@@ -4,7 +4,7 @@ module Exception (module X, module Exception) where
 import GHC.Exception.Type as X
 --import GHC.Err as X (error, errorWithoutStackTrace)
 import "prim" Type
-import Exception.Stack
+import Exception.CallStack
 import "prim" Exception
 
 

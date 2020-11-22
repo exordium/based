@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Machine word sized signed integer type
+--------------------------------------------------------------------
 {-# OPTIONS_GHC -Wno-deprecations #-}
 {-# language MagicHash , UnboxedTuples #-}
 module I where

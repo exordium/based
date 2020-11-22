@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Typeclasses providing various builtin syntax
+--------------------------------------------------------------------
 module Syntax (module X) where
 import Syntax.Num as X
 import Syntax.Do as X

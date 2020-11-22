@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Machine word sized unsigned integer type
+--------------------------------------------------------------------
 {-# language MagicHash , UnboxedTuples #-}
 module U where
 import qualified "prim" U as P

@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Monad for stateful mutations
+--------------------------------------------------------------------
 {-# language MagicHash, UnboxedTuples #-}
 module ST where
 import "prim" ST as P

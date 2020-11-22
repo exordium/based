@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : 8-Bit signed integer type
+--------------------------------------------------------------------
 {-# OPTIONS_GHC -Wno-deprecations #-}
 {-# language MagicHash , UnboxedTuples #-}
 module I.I8 (module I.I8) where

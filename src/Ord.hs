@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Typeclass for total orders
+--------------------------------------------------------------------
 module Ord (Ord(..), module Ord) where
 import B
 import Stock.Ord

@@ -1,5 +1,5 @@
-module Exception.Stack (CallStack(Empty,Push,Freeze,CallStack)
-                       ,HasCallStack,SrcLoc(..)) where
+module Exception.CallStack (CallStack(Empty,Push,Freeze,CallStack)
+                           ,HasCallStack,SrcLoc(..)) where
 import GHC.Stack.Types
 -- TODO: rename/strip SrcLoc
 import Stock.Char

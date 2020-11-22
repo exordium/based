@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Unicode Codepoints
+--------------------------------------------------------------------
 {-# language MagicHash #-}
 module Char (Char(..)) where
 import qualified "prim" Char as P

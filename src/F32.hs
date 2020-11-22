@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : 32-bit floating point type
+--------------------------------------------------------------------
 {-# language MagicHash , UnboxedTuples #-}
 module F32 where
 import qualified "prim" F32 as P

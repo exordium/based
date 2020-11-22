@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Monad for returning and handling errors
+--------------------------------------------------------------------
 module Result where
 import Debug
 import Stock.Eq

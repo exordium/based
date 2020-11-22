@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : 64-bit floating point type
+--------------------------------------------------------------------
 {-# language MagicHash , UnboxedTuples #-}
 module F64 where
 import qualified "prim" F64 as P

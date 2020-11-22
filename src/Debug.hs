@@ -1,3 +1,6 @@
+--------------------------------------------------------------------
+-- | Description : Show,Read, and trace values for debugging
+--------------------------------------------------------------------
 {-# language NoImplicitPrelude,MagicHash #-}
 module Debug (Show(..),Read(..), GHC.traceStack,GHC.traceIO, trace, strace) where
 import GHC.Show
