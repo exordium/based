@@ -4,27 +4,40 @@ module I where
 import qualified "prim" I as P
 import B
 import Stock.Ord
+import Stock.Eq
 import qualified Z
 import {-# SOURCE #-} U
+import qualified Syntax
+import Stock.Int (Int(..))
+
+import Debug
 
 type I# = P.I
 -- | A fixed-precision integer type with at least the range @[-2^29 .. 2^29-1]@.
 -- The exact range for a given implementation can be determined by using
 -- 'Prelude.minBound' and 'Prelude.maxBound' from the 'Prelude.Bounded'
 -- class.
-data {-# CTYPE "HsInt" #-} I = I I#
+data {-# CTYPE "HsInt" #-} I = I I# deriving (Show,Eq,Ord)
+instance Syntax.Num I where
+  (+) = (I.+)
+  (-) = (I.-)
+  (*) = (I.×)
+  negate = I.negate
+  abs = I.abs
+  signum = I.signum
+  fromInteger i = case Syntax.fromInteger i of I# i# → I i#
 
 pattern Max, Min ∷ I
 pattern Max = I P.Max
 pattern Min = I P.Min
 
-infixl 7 *, ⁄, ⁄⁄, %, %%
+infixl 7 ×, ⁄, ⁄⁄, %, %%
 infixl 6 +, -
-(+), (-), (*) ∷ I → I → I
+(+), (-), (×) ∷ I → I → I
 I x + I y = I (x P.+ y)
 I x - I y = I (x P.- y)
 -- | Low word of signed integer multiply
-I x * I y = I (x P.* y)
+I x × I y = I (x P.× y)
 I x `add` I y = I (x `P.add` y)
 I x `sub` I y = I (x `P.sub` y)
 I x `mul` I y = I (x `P.mul` y)
@@ -47,7 +60,7 @@ I x `mul` I y = I (x `P.mul` y)
 --
 --     If in doubt, return non-zero, but do make an effort to create the
 --     correct answer for small args, since otherwise the performance of
---     @(*) ∷ I → I → I@ will be poor.
+--     @(×) ∷ I → I → I@ will be poor.
 mulMayOflo ∷ I → I → B
 mulMayOflo (I x) (I y) = B# (P.mulMayOflo x y)
 negate ∷ I → I

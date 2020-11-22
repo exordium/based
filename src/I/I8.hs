@@ -22,13 +22,13 @@ pattern Max, Min ∷ I8
 pattern Max = I8# P.Max
 pattern Min = I8# P.Min
 
-infixl 7 *, ⁄, ⁄⁄, %, %%
+infixl 7 ×, ⁄, ⁄⁄, %, %%
 infixl 6 +, -
-(+), (-), (*) ∷ I8 → I8 → I8
+(+), (-), (×) ∷ I8 → I8 → I8
 I8# x + I8# y = I8# (P.fromI (x I.+ y))
 I8# x - I8# y = I8# (P.fromI (x I.- y))
 -- | Low word of signed integer multiply
-I8# x * I8# y = I8# (P.fromI (x I.* y))
+I8# x × I8# y = I8# (P.fromI (x I.× y))
 
 _divZeroError = let x = x in x
 _overflow = let x = x in x
@@ -45,7 +45,7 @@ quot (I8# y) (I8# x) | B# (y I.≡ 0#) = _divZeroError
 I8# x ⁄⁄ I8# y | B# (y I.≡ 0#) = _divZeroError
                | B# (y I.≡ (-1#) ∧# x I.≡ P.Min) = _overflow 
                | T = I8# do P.fromI (x I.⁄⁄ y)
--- |Satisfies @x %% y + (x ⁄⁄ y) * y == x@. The
+-- |Satisfies @x %% y + (x ⁄⁄ y) × y == x@. The
 --     behavior is undefined if the first argument is zero.
 rem (I8# y) (I8# x) | B# (y I.≡ 0#) = _divZeroError
                     | T = I8# (P.fromI (I.rem y x))

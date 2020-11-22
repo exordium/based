@@ -13,13 +13,13 @@ type F64# = P.F64
 -- class.
 data {-# CTYPE "HsWord" #-} F64 = F64 F64#
 
-infixl 7 *
+infixl 7 ×
 infixl 6 +, -
-(+), (-), (*) ∷ F64 → F64 → F64
+(+), (-), (×) ∷ F64 → F64 → F64
 F64 x + F64 y = F64 (x P.+ y)
 F64 x - F64 y = F64 (x P.- y)
 -- | Low word of signed integer multiply
-F64 x * F64 y = F64 (x P.* y)
+F64 x × F64 y = F64 (x P.× y)
 F64 x `add` F64 y = F64 (x `P.add` y)
 F64 x `sub` F64 y = F64 (x `P.sub` y)
 F64 x `mul` F64 y = F64 (x `P.mul` y)

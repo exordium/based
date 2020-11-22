@@ -2,10 +2,12 @@
 module ST where
 import "prim" ST as P
 import qualified "prim" IO
+import "prim" IO (type (☸))
 import "prim" Thread
 import GHC.Show
 import qualified Syntax
 import Stock.Int
+import Stock.IO
 
 newtype ST s a = ST# (ST# s a)
 
@@ -56,4 +58,5 @@ noDuplicate# = ST# \ s → case Thread.noDuplicate s of s' → (# s' , () #)
 instance Show (ST s a) where
   showsPrec _ _ = showString "<<ST>>"
   showList = showList__ (showsPrec (I# 0#))
+
 

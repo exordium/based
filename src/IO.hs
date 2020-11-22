@@ -1,9 +1,10 @@
 {-# language MagicHash, UnboxedTuples #-}
-module IO where
+module IO (IO, module IO) where
 import Stock.IO
 import "prim" IO
 import "prim" Thread
 import GHC.Show
+import ST (ST(..))
 
 pattern IO# ∷ IO# a → IO a
 pattern IO# io = IO io
@@ -43,3 +44,8 @@ dupableInterleave# (IO# m) = IO# \ s ->
 
 noDuplicate# ∷ IO ()
 noDuplicate# = IO# \ s → case Thread.noDuplicate s of s' → (# s' , () #)
+
+fromST ∷ ST (☸) a → IO a
+fromST (ST# k) = IO# k
+toST ∷ IO a → ST (☸) a
+toST (IO# a) = ST# a

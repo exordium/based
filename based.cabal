@@ -22,12 +22,16 @@ common x
 library 
   import: x
   hs-source-dirs: src
-  exposed-modules: Prelude, Ord, Eq, Maybe, Debug
+  exposed-modules: Prelude, Ord, Eq, Debug
                  , I , U , F32, F64
                  , I.I8
-                 , K, Char
+                 , K, Result, Maybe
+                 , Char
                  , Exception, Exception.Stack
                  , IO, ST
                  , Syntax, Syntax.Do, Syntax.String, Syntax.List, Syntax.Num
+                 , Ref
+                 , Ref.IO
+                 , Ref.ST, Ref.ST.Lazy, Ref.ST.Atomic, Ref.ST.Atomic.Lazy
   reexported-modules: Coerce, Syntax.ImplicitParam
-  build-depends: microbase, prim, integer
+  build-depends: microbase, prim, integer, base

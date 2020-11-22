@@ -13,13 +13,13 @@ pattern Max, Min ∷ U
 pattern Max = U P.Max
 pattern Min = U P.Min
 
-infixl 7 *, /, //, %, %%
+infixl 7 ×, /, //, %, %%
 infixl 6 +, -
-(+), (-), (*) ∷ U → U → U
+(+), (-), (×) ∷ U → U → U
 U x + U y = U (x P.+ y)
 U x - U y = U (x P.- y)
 -- | Low word of signed integer multiply
-U x * U y = U (x P.* y)
+U x × U y = U (x P.× y)
 U x `add` U y = U (x `P.add` y)
 U x `sub` U y = U (x `P.sub` y)
 U x `mul` U y = U (x `P.mul` y)

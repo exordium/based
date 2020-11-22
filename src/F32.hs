@@ -13,13 +13,13 @@ type F32# = P.F32
 -- class.
 data {-# CTYPE "HsWord" #-} F32 = F32 F32#
 
-infixl 7 *
+infixl 7 ×
 infixl 6 +, -
-(+), (-), (*) ∷ F32 → F32 → F32
+(+), (-), (×) ∷ F32 → F32 → F32
 F32 x + F32 y = F32 (x P.+ y)
 F32 x - F32 y = F32 (x P.- y)
 -- | Low word of signed integer multiply
-F32 x * F32 y = F32 (x P.* y)
+F32 x × F32 y = F32 (x P.× y)
 F32 x `add` F32 y = F32 (x `P.add` y)
 F32 x `sub` F32 y = F32 (x `P.sub` y)
 F32 x `mul` F32 y = F32 (x `P.mul` y)
