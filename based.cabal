@@ -27,9 +27,10 @@ library
                  , I.I8
                  , K, Result, Maybe
                  , Char
-                 , Exception, Exception.Stack
+                 , Exception, Exception.CallStack
                  , IO, ST
-                 , Syntax, Syntax.Do, Syntax.String, Syntax.List, Syntax.Num
+                 , Syntax, Syntax.Do, Syntax.String, Syntax.List, Syntax.Num,
+                 Syntax.Zip, Syntax.Label
                  , Ref
                  , Ref.IO, Ref.IO.Lazy, Ref.IO.Atomic, Ref.IO.Atomic.Lazy
                  , Ref.ST, Ref.ST.Lazy, Ref.ST.Atomic, Ref.ST.Atomic.Lazy
